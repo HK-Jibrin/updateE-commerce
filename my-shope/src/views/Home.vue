@@ -1,14 +1,21 @@
 <template>
   <div class="home">
     <Header />
-<b-container class="bv-example-row">
+<b-container class="bv-example-row" fluid>
+  
   <b-row>
-    <b-col cols="4"><category v-for="cat in categories" :key="cat.id" :category="cat"/></b-col>
-    <b-col cols="10"><Products v-for="item in products" :key="item.id" :product="item" /></b-col>
+    <b-col cols><category v-for="cat in categories" :key="cat.id" :category="cat"/></b-col>
+    <b-col cols ="9"><div id="cal"><Carousel /></div></b-col>
+    
+    
   </b-row>
 </b-container>
+      <div class="down"><Products v-for="item in products" :key="item.id" :product="item" /></div>
+      <div>
+        <Footer/>
+      </div>
+</div>
 
-  </div>
 </template>
 
 <script>
@@ -16,17 +23,22 @@
 import Category from '../components/Category.vue'
 import Header from '../components/Header.vue'
 import Products from '../components/Products.vue'
+import Carousel from '../components/Carousel.vue'
+import Footer from  '../components/Footer.vue'
 
 export default {
   name: 'Home',
  components :{
     Category, 
     Header,
-    Products
+    Products,
+    Carousel,
+    Footer
    
   },
   data(){
       return{
+
         categories: [
           {
             id : 1,
@@ -53,15 +65,16 @@ export default {
         },
         {
             id : 5,
-        name: "",
+        name: "vegetables",
         
-          
-        }
-        
+           },
+            {
+            id : 6,
+        name: "Cars",
+            }
         ],
 
-
-        products: [
+    products: [
         {
         id: 1,
         imageLink: require("../assets/f3shoe.jpg") ,
@@ -98,18 +111,29 @@ export default {
         name: 'Male Shirt',
         price: 4000
         },
-      //  {
-      //   id: 9,
-      //   imageLink: require("../assets/suzukibrezza.jpg") ,
-      //   name: 'Suzuki Brezza',
-      //   price: 250000
-      //   },
+        {
+        id: 8,
+        imageLink: require("../assets/yam-1.jpg") ,
+        name: 'Tuber of Yam',
+        price: 700
+        },
         {
         id: 9,
-        imageLink: require("../assets/yam-1.jpg") ,
+        imageLink: require("../assets/spinach.jpg") ,
+        name: 'Natural Spinach',
+        price: 500  
+        },
+         {
+        id: 10,
+        imageLink: require("../assets/benz.jpg"),
+        name: 'Mercedees benz c300',
+        price: 75.7 
+        },{
+        id: 11,
+        imageLink: require("../assets/suzukibrezza.jpg") ,
         name: 'Suzuki Brezza',
-        price: 250000
-        }
+        price: 25.9
+        },
     ]
 
     }
@@ -119,8 +143,12 @@ export default {
 </script>
 
 <style>
+
+.down{
+  margin-top: 40px;
+}
 .bv-example-row{
- margin-top: 20px;
+ margin-top: 10px;
 }
 
 </style>

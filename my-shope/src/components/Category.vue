@@ -1,11 +1,9 @@
 <template>
-<b-container class="cat">
- <b-row>
+<div class="category">
 <b-list-group>
   <b-list-group-item > {{ category.name }}</b-list-group-item>
 </b-list-group>
-</b-row>
-</b-container> 
+</div>
 </template>
 
 <script>
@@ -19,7 +17,6 @@ export default {
 <style scoped>
 .cat{
   margin-top: 5px;
-  flex: auto;
 }
 
 </style>

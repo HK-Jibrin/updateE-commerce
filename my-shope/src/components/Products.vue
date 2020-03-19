@@ -1,10 +1,12 @@
 <template>
+<div class="hom">
    <div class="products">
-           <img :src="product.imageLink" height="150ppx" width="250px">
+           <img :src="product.imageLink" height="150" width="250">
     <p>{{product.name}}  </p>
-    <p> {{product.price}} </p>
-    <b-button href="#" variant="primary"> Buy Now </b-button>  
+    <p> &#8358; {{product.price}} </p>
+    <b-button href="#" variant="primary" style="margin-bottom: 10px;"> Buy Now </b-button>  
    </div>
+</div>
       
 </template>
 <script>
@@ -18,14 +20,19 @@ export default {
 .products{
     padding: 0;
     margin: 0;
-    display: inline-block;
     margin-left: 10px;
     margin-bottom: 10px;
-    border: 1px solid black;
+    border: 2px solid black;
     text-align: center;
     padding-top: 20px;
     background-color: whitesmoke;
     border-radius: 20px;
+}
+.hom{
+  width: 300px; 
+  margin-bottom: 10px;
+  
+   display: inline-block;
 }
  
 
